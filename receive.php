@@ -1,5 +1,6 @@
 <?php
 #include_once 'send.php';
+#include_once 'include.php';
 $query = mysql_escape_string($_REQUEST['query']);
 $state = mysql_escape_string($_REQUEST['state']);
 $error = 0;
@@ -16,7 +17,7 @@ else {
 $query2 = mysql_escape_string($_POST["query"]);
 //get data
 if ($error == 0) {
-	$db = mysqli_connect('localhost','330479','cadbury123','330479');//Don't drop table please, I'll fix this later.
+	$db = mysqli_connect('localhost','330479',$dbpass,'330479');
 	$results = $db->query('SELECT * FROM `messages` WHERE `'.
 		$state2 .
 		'` = "' .

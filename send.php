@@ -1,4 +1,5 @@
 <?php
+#include_once 'include.php';
 $debug = 0;
 function is_pgp($my_string) {
 
@@ -50,7 +51,7 @@ $query = 'INSERT INTO `messages` (`tokey`,`fromkey`, `message`,`time`) VALUES ("
 	$message . '",' .
 	'NOW())';
 if ($validation == 1) {
-	$db = mysqli_connect($host = "localhost",$username = '330479',$passwd = 'cadbury123',$dbname = '330479');
+	$db = mysqli_connect($host = "localhost",$username = '330479',$passwd = $dbpass,$dbname = '330479');
 	$query = $db->query($query);
 	echo 'Sucess';
 }
