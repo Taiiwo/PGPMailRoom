@@ -1,4 +1,5 @@
 function button(){
+	//
 	print( document.getElementById('speech').value );
 	document.getElementById('speech').value = '';
 }

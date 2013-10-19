@@ -3,11 +3,19 @@
 	<title>The PGP MailRoom</title>
 </head>
 <body>
-	<form action="./send.php" method="GET">
-		To: <textarea name="tokey"></textarea><br />
-		From (Optional): <textarea name="fromkey"></textarea><br />
-		Message: <textarea name="message"></textarea><br />
-		<input type="submit" />
+	<form action="./send.php" method="POST">
+		To (PGP PUBLIC KEY): <textarea name="tokey"></textarea><br />
+		From (PGP PUBLIC KEY)(Optional): <textarea name="fromkey"></textarea><br />
+		Message (PGP MESSAGE): <textarea name="message"></textarea><br />
+		<input type="submit" value="Submit" />
+	</form><br />
+	<form action="./receive.php" method="POST">
+		Search for messages <select name="state">
+			<option value="TO">TO</option>
+			<option value="FROM">FROM</option>
+		</select>
+		this PGP PUBLIC KEY:<textarea name="query"></textarea>
+		<br /><input type="submit" value="Submit" />
 	</form>
 </body>
 </html>
